@@ -8,9 +8,14 @@ type hclNameDescription struct {
 	Name    string         `hcl:"name,label"`
 	Default hcl.Attributes `hcl:"default,remain"`
 }
-type hclVariable hclNameDescription
 type hclOutput hclNameDescription
 type hclModule hclNameDescription
+
+type hclVariable struct {
+	Name    string         `hcl:"name,label"`
+	Validation hcl.Block   `hcl:"validation,block"`
+	Default hcl.Attributes `hcl:"default,remain"`
+}
 
 type hclProvider struct {
 	Name    string   `hcl:"name,label"`
