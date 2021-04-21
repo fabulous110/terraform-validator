@@ -13,8 +13,8 @@ type hclModule hclNameDescription
 
 type hclVariable struct {
 	Name    string         `hcl:"name,label"`
-	Validation hcl.Block   `hcl:"validation,block"`
-	Default hcl.Attributes `hcl:"default,remain"`
+	Default hcl.Attributes `hcl:"default,attr"`
+	Validation hcl.Body   `hcl:"validation,remain"`
 }
 
 type hclProvider struct {
